@@ -1,6 +1,6 @@
 <template>
   <main class="mgfhelp">
-    <nav class="mgfhelp__panel mgfhelp__sections">
+    <nav v-if="navPrimary != null" class="mgfhelp__panel mgfhelp__sections">
       <div class="mgfhelp__scrollarea">
         <section
           v-for="(heading, headingindex) in navPrimary"
@@ -73,9 +73,14 @@ export default {
   },
   mounted() {
 
-    this.$api.get('mgf/documentation/index').then(response => {
-      this.navPrimary = response.pages;
-      this.loadPageContent(response.slug);
+    this.$api.get('mgfagency/helpsection/index').then(response => {
+      if (response.status != 'ok') {
+        this.content = "<h1>Error</h1><br>" + response.error;
+      }
+      else {
+        this.navPrimary = response.pages;
+        this.loadPageContent(response.slug);
+      }
     });
 
     var panelview = document.querySelector(".k-panel-view");
@@ -102,7 +107,7 @@ export default {
       this.currentPageSlug = page.id;
     },
     loadPageContent (slug) {
-      this.$api.get('mgf/documentation/page/' + slug).then(response => {
+      this.$api.get('mgfagency/helpsection/page/' + slug).then(response => {
         this.content = response.rendered;
       });
     },

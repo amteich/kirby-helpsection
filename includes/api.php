@@ -4,11 +4,19 @@ return [
   'routes' => [
     [
       // Get the first set of pages to display primary nav
-      'pattern' => 'mgf/documentation/index',
+      'pattern' => 'mgfagency/helpsection/index',
       'action'  => function () {
-        $slug = option('mgfagency.documentation.contentfolder', 'documentation');
+        $slug = option('mgfagency.helpsection.contentfolder', 'helpsection');
         $pages = [];
-    
+        $page = page($slug);
+
+        if ($page == null) {
+          return [
+            'status' => 'failed',
+            'error' => "Please create a new content-folder <code>$slug</code> to show it here.",
+          ];
+        }
+
         foreach (page($slug)->children() as $page) {
           $pagedata = [
             'title' => (string)$page->title(),
@@ -36,12 +44,13 @@ return [
         return [
           'slug' => $slug,
           'pages' => $pages,
+          'status' => 'ok',
         ];
       },
     ],
     [
       // Get the first set of pages to display primary nav
-      'pattern' => 'mgf/documentation/page/(:all)',
+      'pattern' => 'mgfagency/helpsection/page/(:all)',
       'action'  => function ($slug) {
         return [
           'rendered' => page($slug)->render(),

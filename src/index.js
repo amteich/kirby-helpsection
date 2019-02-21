@@ -1,6 +1,6 @@
 import View from "./components/view.vue";
 
-panel.plugin("mgfagency/documentation", {
+panel.plugin("mgfagency/helpsection", {
   views: {
     documentation: {
       label: "Hilfe",

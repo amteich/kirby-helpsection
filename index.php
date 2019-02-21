@@ -1,14 +1,14 @@
 <?php
 
-namespace mgfagency\documentation;
+namespace mgfagency\helpsection;
 
 use Kirby;
 
-\Kirby::plugin('mgfagency/documentation', [
+\Kirby::plugin('mgfagency/helpsection', [
   'routes' => function ($kirby) {
     return [
       [
-        'pattern' => $kirby->option('mgfagency.documentation.contentfolder', 'documentation'),
+        'pattern' => $kirby->option('mgfagency.helpsection.contentfolder', 'helpsection'),
         'action' => function () {
           return false;
         }

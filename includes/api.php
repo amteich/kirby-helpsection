@@ -33,7 +33,10 @@ return [
           $pages[] = $pagedata;
         }
     
-        return $pages;
+        return [
+          'slug' => $slug,
+          'pages' => $pages,
+        ];
       },
     ],
     [

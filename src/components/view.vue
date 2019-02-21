@@ -74,23 +74,14 @@ export default {
   mounted() {
 
     this.$api.get('mgf/documentation/index').then(response => {
-      this.navPrimary = response;
-      // this.openFirstFoundPage(this.pages);
+      this.navPrimary = response.pages;
+      this.loadPageContent(response.slug);
     });
 
     var panelview = document.querySelector(".k-panel-view");
     panelview.classList.add('mgfhelp-overflow-hidden');
   },
   methods: {
-    url(id, path) {
-      let url = id.replace(/\//g, "+");
-
-      if (path) {
-        url += "/" + path;
-      }
-
-      return url;
-    },
     clickPrimaryNav(page) {
       if (page.hasChildren) {
         this.$api.get('pages/' + this.url(page.id, 'children'), 
@@ -107,24 +98,23 @@ export default {
       this.currentPageSlug = page.id;
     },
     clickSecondaryNav(page) {
-      this.$api.get('mgf/documentation/page/' + page.id).then(response => {
-        this.content = response.rendered;
-      });
+      this.loadPageContent(page.id);
       this.currentPageSlug = page.id;
     },
-    openFirstFoundPage (pages) {
-      // console.log (pages);
-      for (var key in pages) {
-        if (typeof pages[key]['children'] === 'undefined') {
-          this.content = pages[key]['content'];
-          this.currentTopLevelSlug = pages[key].slug;
-          return true;
-        }
-        else {
-          return this.openFirstFoundPage(pages[key]['children']);
-        }
+    loadPageContent (slug) {
+      this.$api.get('mgf/documentation/page/' + slug).then(response => {
+        this.content = response.rendered;
+      });
+    },
+    url(id, path) {
+      let url = id.replace(/\//g, "+");
+
+      if (path) {
+        url += "/" + path;
       }
-    }
+
+      return url;
+    },
   }
 }
 

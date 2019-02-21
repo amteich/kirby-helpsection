@@ -1,4 +1,4 @@
-import View from "./components/View.vue";
+import View from "./components/view.vue";
 
 panel.plugin("mgfagency/documentation", {
   views: {

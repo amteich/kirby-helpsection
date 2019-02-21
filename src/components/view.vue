@@ -3,20 +3,20 @@
     <nav class="mgfhelp__panel mgfhelp__sections">
       <div class="mgfhelp__scrollarea">
         <section
-          v-for="(heading, headingindex) in pages"
+          v-for="(heading, headingindex) in navPrimary"
           :key="headingindex"
         >
-          <h2>{{ heading.content.title }}</h2>
+          <h2>{{ heading.title }}</h2>
 
           <ul>
             <li
               v-for="(subpage, subpageindex) in heading.children"
               :key="subpageindex">
               <a
-                :aria-current="subpage.slug === currentTopLevelSlug"
+                :aria-current="currentPageSlug.startsWith(subpage.id)"
                 @click.stop="clickPrimaryNav(subpage)"
               >
-                {{ subpage.content.title }}
+                {{ subpage.title }}
               </a>
             </li>
           </ul>
@@ -30,11 +30,11 @@
             v-for="(item, index) in navSecondary"
             :key="index">
             <a
-                :aria-current="item.slug === currentSecondLevelSlug"
+                :aria-current="item.id === currentPageSlug"
                 @click.stop="clickSecondaryNav(item)"
               >
               <span>
-                <strong>{{ item.content.title }}</strong>
+                <strong>{{ item.title }}</strong>
                 <small v-if="item.content.excerpt" v-html="item.content.excerpt"></small>
               </span>
             </a>
@@ -45,10 +45,7 @@
     <article class="mgfhelp__panel mgfhelp__main">
       <div class="mgfhelp__scrollarea">
         <div class="mgfhelp__main__inner">
-          <k-text v-if="content != null">
-            <h1>{{ content.title }}</h1>
-            <div class="intro" v-html="content.excerpt"></div>
-            <div v-html="content.text"></div>
+          <k-text v-if="content != null" v-html="content">
           </k-text>
         </div>
       </div>
@@ -63,10 +60,9 @@ import Syntaxhighlighting from "./syntaxhighlighting.vue";
 export default {
   data: function () {
     return {
-      pages: null,
-      currentTopLevelSlug: null,
-      currentSecondLevelSlug: null,
+      navPrimary: null,
       navSecondary: null,
+      currentPageSlug: '',
       content: null,
     };
   },
@@ -76,36 +72,45 @@ export default {
     Syntaxhighlighting.init();
   },
   mounted() {
-    // console.log (window.location.hash);
+
+    this.$api.get('mgf/documentation/index').then(response => {
+      this.navPrimary = response;
+      // this.openFirstFoundPage(this.pages);
+    });
+
     var panelview = document.querySelector(".k-panel-view");
     panelview.classList.add('mgfhelp-overflow-hidden');
-
-    this.$api.get('mgf/documentation/pages').then(response => {
-      this.pages = response.pages;
-      this.openFirstFoundPage(this.pages);
-    });
   },
   methods: {
-    clickPrimaryNav(subpage) {
-      if ('children' in subpage) {
-        this.navSecondary = subpage.children;
-      }
-      else {
-        this.navSecondary = null;
-      }
-      if ('content' in subpage) {
-        this.content = subpage.content;
-      }
-      else {
-        this.content = null;
+    url(id, path) {
+      let url = id.replace(/\//g, "+");
+
+      if (path) {
+        url += "/" + path;
       }
 
-      this.currentSecondLevelSlug = null;
-      this.currentTopLevelSlug = subpage.slug;
+      return url;
     },
-    clickSecondaryNav(subpage) {
-      this.content = subpage.content;
-      this.currentSecondLevelSlug = subpage.slug;
+    clickPrimaryNav(page) {
+      if (page.hasChildren) {
+        this.$api.get('pages/' + this.url(page.id, 'children'), 
+                      { 'select': 'id,title,content' }).then(response => {
+          this.navSecondary = response.data;
+          this.content = page.rendered;
+        });
+      }
+      else {
+        this.content = page.rendered;
+        this.navSecondary = null;
+      }
+      
+      this.currentPageSlug = page.id;
+    },
+    clickSecondaryNav(page) {
+      this.$api.get('mgf/documentation/page/' + page.id).then(response => {
+        this.content = response.rendered;
+      });
+      this.currentPageSlug = page.id;
     },
     openFirstFoundPage (pages) {
       // console.log (pages);

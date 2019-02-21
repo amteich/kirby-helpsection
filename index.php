@@ -2,25 +2,11 @@
 
 namespace mgfagency\documentation;
 
-load([
-  'mgfagency\\documentation\\documentation'    => 'classes/Documentation.php',
-], __DIR__);
-
 use Kirby;
 
 \Kirby::plugin('mgfagency/documentation', [
-  'api' => [
-    'routes' => [
-      [
-        'pattern' => 'mgf/documentation/pages',
-        'action'  => function () {
-          Documentation::$contentRoot = dirname(kirby()->roots()->site()) . '/documentation';
-          
-          return [
-            'pages' => Documentation::load(),
-          ];
-        }
-      ],
-    ],
+  'api' => include __DIR__ . '/includes/api.php',
+  'templates' => [
+    'doc' => __DIR__ . '/templates/doc.php',
   ],
 ]);

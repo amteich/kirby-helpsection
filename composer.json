@@ -1,0 +1,15 @@
+{
+    "name": "mgfagency/documentation",
+    "description": "Documentation Panel View",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Zehetner",
+            "email": "christian@mgf.at"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
+}

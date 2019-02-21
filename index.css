@@ -1,0 +1,126 @@
+/* PrismJS 1.15.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+markdown */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
+}
+
+.token.punctuation {
+	color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #e2777a;
+}
+
+.token.function-name {
+	color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+
+
+.token.kirbytag-bracket{color:#d16464}.token.kirbytag-attr,.token.kirbytag-name{color:#de935f}pre[class*=language-]{margin-bottom:1.5rem;font-size:.8rem}
+.mgfhelp{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex}.mgfhelp__panel{-ms-flex-preferred-size:11rem;flex-basis:11rem;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;background:#efefef;border-right:1px solid #ddd;overflow:hidden;-ms-flex-negative:0;flex-shrink:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.mgfhelp__sections{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace}.mgfhelp__sections h2{font-size:.875rem;margin-bottom:.25rem;padding:0 1.5rem;line-height:1.5}.mgfhelp__sections section{padding:.75rem 0}.mgfhelp__sections a{cursor:pointer;font-size:.75rem;display:block;padding:.25rem 1.5rem;width:100%}.mgfhelp__sections a[aria-current]{background:#ddd}.mgfhelp__entries{background:#fff;-ms-flex-preferred-size:20%;flex-basis:20%;-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0;min-width:16rem}.mgfhelp__entries li{position:relative;font-size:.75rem;border-bottom:1px solid rgba(0,0,0,.1)}.mgfhelp__entries li a{cursor:pointer;display:block;padding:.75rem 1.5rem;outline:0}.mgfhelp__entries li a strong{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-weight:500;display:block;font-size:.8rem}.mgfhelp__entries li a small{color:#777;font-size:.75rem;margin-top:5px;display:block}.mgfhelp__entries li a[aria-current]{background:#ddd}.mgfhelp__scrollarea{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;overflow-x:auto;-webkit-overflow-scrolling:touch}.mgfhelp__main{background:#fff;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:1;flex-shrink:1;min-width:20rem}.mgfhelp__main a{color:#008dce;text-decoration:none}.mgfhelp__main a:hover{color:#006a9b}.mgfhelp__main h1,.mgfhelp__main h2,.mgfhelp__main h3,.mgfhelp__main h4,.mgfhelp__main h5,.mgfhelp__main h6{margin-bottom:1rem}.mgfhelp__main h2,.mgfhelp__main h3,.mgfhelp__main h4,.mgfhelp__main h5,.mgfhelp__main h6{margin-top:2rem}.mgfhelp__main .intro{font-size:1.5rem;color:rgba(60,67,80,.8);max-width:35rem}.mgfhelp__main img{max-width:100%}.mgfhelp__main__inner{padding:3rem}.mgfhelp-overflow-hidden{overflow:hidden}

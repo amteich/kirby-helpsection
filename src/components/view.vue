@@ -83,13 +83,15 @@ export default {
       }
     });
 
-    var panelview = document.querySelector(".k-panel-view");
-    panelview.classList.add('mgfhelp-overflow-hidden');
+    document.querySelector(".k-panel-view").classList.add('k-panel-view--mgfhelp');
+  },
+  beforeDestroy() {
+    document.querySelector(".k-panel-view").classList.remove('k-panel-view--mgfhelp');
   },
   methods: {
     clickPrimaryNav(page) {
       if (page.hasChildren) {
-        this.$api.get('pages/' + this.url(page.id, 'children'), 
+        this.$api.get('pages/' + this.url(page.id, 'children'),
                       { 'select': 'id,title,content' }).then(response => {
           this.navSecondary = response.data;
           this.content = page.rendered;
@@ -99,7 +101,7 @@ export default {
         this.content = page.rendered;
         this.navSecondary = null;
       }
-      
+
       this.currentPageSlug = page.id;
     },
     clickSecondaryNav(page) {
@@ -126,6 +128,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+.k-panel-view--mgfhelp {
+  overflow: hidden;
+}
 
 .mgfhelp {
   position: absolute;
@@ -239,7 +245,7 @@ export default {
       }
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, figure, table {
       margin-bottom: 1rem;
     }
 
@@ -261,9 +267,5 @@ export default {
   .mgfhelp__main__inner {
     padding: 3rem;
   }
-
-.mgfhelp-overflow-hidden {
-  overflow: hidden;
-}
 
 </style>

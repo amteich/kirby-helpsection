@@ -2,7 +2,7 @@ import View from "./components/view.vue";
 
 panel.plugin("mgfagency/helpsection", {
   views: {
-    documentation: {
+    helpsection: {
       label: "Hilfe",
       icon: "check",
       menu: true,

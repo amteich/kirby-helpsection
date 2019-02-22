@@ -4,7 +4,7 @@ panel.plugin("mgfagency/helpsection", {
   views: {
     helpsection: {
       label: "Hilfe",
-      icon: "check",
+      icon: "wand",
       menu: true,
       component: View
     }

@@ -1,5 +1,5 @@
 {
-    "name": "mgfagency/helpsection",
+    "name": "mgfagency/kirby-helpsection",
     "description": "Panel-View to display help for users.",
     "type": "kirby-plugin",
     "version": "1.0.0-beta.1",

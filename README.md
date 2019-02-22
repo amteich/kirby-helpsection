@@ -28,7 +28,7 @@ git submodule add https://github.com/mgfagency/kirby-helpsection.git site/plugin
 ### Composer
 
 ```
-composer require mgfagency/kirby-helpsection
+composer require mgfagency/kirby-helpsection:@beta
 ```
 
 ## Options

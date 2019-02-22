@@ -18,8 +18,7 @@ class TextformatsPage extends Page {
             $slug = F::name($id);
 
             $content = [
-                'title'    => $id,
-                // 'excerpt' => $blueprint['help'] ?? '',
+                'title'    => '(' . $id . ': ...)',
             ];
 
             if ($page = parent::children()->find($slug)) {

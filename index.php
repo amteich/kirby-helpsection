@@ -2,8 +2,6 @@
 
 namespace mgfagency\helpsection;
 
-require_once 'models/textformats.php';
-
 use Kirby;
 
 \Kirby::plugin('mgfagency/helpsection', [
@@ -20,9 +18,5 @@ use Kirby;
     'api' => include __DIR__ . '/includes/api.php',
     'templates' => [
         'doc' => __DIR__ . '/templates/doc.php',
-        'textformats' => __DIR__ . '/templates/textformats.php',
-    ],
-    'pageModels' => [
-        'textformats' => 'mgfagency\helpsection\TextformatsPage',
     ],
 ]);

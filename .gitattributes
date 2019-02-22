@@ -12,3 +12,4 @@ composer.lock export-ignore
 
 # Directories
 src/ export-ignore
+doc/ export-ignore

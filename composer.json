@@ -1,13 +1,16 @@
 {
     "name": "mgfagency/helpsection",
-    "description": "Panel View to display help for users.",
+    "description": "Panel-View to display help for users.",
     "type": "kirby-plugin",
-    "version": "1.0.0",
+    "version": "1.0.0-beta.1",
     "license": "MIT",
     "authors": [
         {
             "name": "Christian Zehetner",
             "email": "christian@mgf.at"
         }
-    ]
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
 }

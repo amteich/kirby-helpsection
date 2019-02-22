@@ -4,7 +4,6 @@ namespace mgfagency\helpsection;
 
 use Kirby;
 
-
 \Kirby::plugin('mgfagency/helpsection', [
     'routes' => function ($kirby) {
         return [

@@ -19,4 +19,5 @@ use Kirby;
     'templates' => [
         'doc' => __DIR__ . '/templates/doc.php',
     ],
+    'translations' => require __DIR__ . '/includes/translations.php',
 ]);

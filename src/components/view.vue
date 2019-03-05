@@ -328,7 +328,11 @@ export default {
   }
 
   .mgfhelp__main__inner {
-    padding: 3rem;
+    padding: 1.5rem;
+
+    @media only screen and (min-width: 768px) {
+      padding: 3rem;
+    }
   }
 
 </style>

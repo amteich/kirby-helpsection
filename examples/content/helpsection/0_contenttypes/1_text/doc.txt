@@ -1,0 +1,5 @@
+Title: Text
+----
+Excerpt:
+
+This page template is used for simple textual pages.

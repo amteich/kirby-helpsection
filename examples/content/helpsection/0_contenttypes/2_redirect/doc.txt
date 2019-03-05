@@ -1,0 +1,11 @@
+Title: Redirect
+
+----
+Excerpt:
+
+Pages get redirected to the given url. 
+
+----
+Text:
+
+If you specify no url the page is redirected to the first child page. 

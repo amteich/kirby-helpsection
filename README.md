@@ -38,22 +38,26 @@ All options require `mgfagency.helpsection.` as prefix.
 **contentfolder**
 
 - default: `helpsection`
-- contents of this folder is loaded into the help view of the panel
+- content of this folder is loaded into the help view of the panel
 
 ## Setup
 
-Add documentation pages to the specified content folder.
+Copy the example structure in [examples/content](examples/) to your content folder.
 
 ```
 content
   helpsection
     doc.txt
-    01-intro
+    0_contenttypes
       doc.txt
       image.png
-    02-section-two
+    1_text
       doc.txt
 ```
+
+A template named `doc` comes with the plugin which uses the fields `title`, `excerpt` and `text` to display the pages. The template can also be overwritten in your kirby installation  or you could use your own templates for the documentation pages.
+
+You could also use virtual pages to create pages and subpages. For example this [model](examples/models/textformats.php) generates subpages for a page template `textformats`.
 
 ## Disclaimer
 

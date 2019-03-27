@@ -19,5 +19,8 @@ use Kirby;
     'templates' => [
         'doc' => __DIR__ . '/templates/doc.php',
     ],
+    'blueprints' => [
+        'pages/doc' => __DIR__ . '/blueprints/doc.yml'
+    ],
     'translations' => require __DIR__ . '/includes/translations.php',
 ]);

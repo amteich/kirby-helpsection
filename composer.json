@@ -2,7 +2,7 @@
     "name": "mgfagency/kirby-helpsection",
     "description": "Panel-View to display help for users.",
     "type": "kirby-plugin",
-    "version": "1.0.0-beta.5",
+    "version": "1.0.0-beta.6",
     "license": "MIT",
     "authors": [
         {

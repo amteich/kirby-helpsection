@@ -18,9 +18,10 @@ use Kirby;
     'api' => include __DIR__ . '/includes/api.php',
     'templates' => [
         'doc' => __DIR__ . '/templates/doc.php',
+        'docindex' => __DIR__ . '/templates/docindex.php',
     ],
     'blueprints' => [
-        'pages/doc' => __DIR__ . '/blueprints/doc.yml'
+        'pages/docindex' => __DIR__ . '/blueprints/docindex.yml'
     ],
     'translations' => require __DIR__ . '/includes/translations.php',
 ]);

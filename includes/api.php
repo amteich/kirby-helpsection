@@ -23,8 +23,8 @@ return [
             'id' => (string)$page->id(),
             ];
 
-            if ($page->hasVisibleChildren()) {
-            $children = $page->children()->visible();
+            if ($page->hasListedChildren()) {
+            $children = $page->children()->listed();
             $childrendata = [];
             foreach ($children as $child) {
                 $childrendata[] = [

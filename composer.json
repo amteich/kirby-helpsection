@@ -2,7 +2,7 @@
     "name": "amteich/kirby-helpsection",
     "description": "Panel-View to display help for users.",
     "type": "kirby-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {

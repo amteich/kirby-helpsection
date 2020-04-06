@@ -28,7 +28,7 @@ git submodule add https://github.com/amteich/kirby-helpsection.git site/plugins/
 ### Composer
 
 ```
-composer require amteich/kirby-helpsection:@beta
+composer require amteich/kirby-helpsection
 ```
 
 ## Options

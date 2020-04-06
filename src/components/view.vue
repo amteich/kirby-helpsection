@@ -108,7 +108,7 @@ export default {
       this.windowWidth = window.innerWidth
     });
 
-    this.$api.get('mgfagency/helpsection/index').then(response => {
+    this.$api.get('amteich/helpsection/index').then(response => {
       if (response.status != 'ok') {
         this.content = "<h1>Error</h1><br>" + response.error;
       }
@@ -146,7 +146,7 @@ export default {
       this.show = 'main';
     },
     loadPageContent (slug) {
-      this.$api.get('mgfagency/helpsection/page/' + slug).then(response => {
+      this.$api.get('amteich/helpsection/page/' + slug).then(response => {
         this.content = response.rendered;
       });
     },

@@ -1,14 +1,17 @@
 <?php
 
-namespace mgfagency\helpsection;
+namespace amteich\helpsection;
 
 use Kirby;
 
-\Kirby::plugin('mgfagency/helpsection', [
+\Kirby::plugin('amteich/helpsection', [
+    'options' => [
+        'icon' => 'question',
+    ],
     'routes' => function ($kirby) {
         return [
             [
-                'pattern' => $kirby->option('mgfagency.helpsection.contentfolder', 'helpsection'),
+                'pattern' => $kirby->option('amteich.helpsection.contentfolder', 'helpsection'),
                 'action' => function () {
                     return false;
                 }

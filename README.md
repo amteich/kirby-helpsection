@@ -22,18 +22,18 @@ Download and copy this repository to `/site/plugins/kirby-helpsection`.
 ### Git submodule
 
 ```
-git submodule add https://github.com/mgfagency/kirby-helpsection.git site/plugins/kirby-helpsection
+git submodule add https://github.com/amteich/kirby-helpsection.git site/plugins/kirby-helpsection
 ```
 
 ### Composer
 
 ```
-composer require mgfagency/kirby-helpsection:@beta
+composer require amteich/kirby-helpsection:@beta
 ```
 
 ## Options
 
-All options require `mgfagency.helpsection.` as prefix.
+All options require `amteich.helpsection.` as prefix.
 
 **contentfolder**
 

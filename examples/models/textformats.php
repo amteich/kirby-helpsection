@@ -1,6 +1,6 @@
 <?php
 
-namespace mgfagency\helpsection;
+namespace amteich\helpsection;
 
 use Kirby\CMS\KirbyTag;
 use Page;

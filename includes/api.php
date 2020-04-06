@@ -4,9 +4,9 @@ return [
     'routes' => [
     [
         // Get the first set of pages to display primary nav
-        'pattern' => 'mgfagency/helpsection/index',
+        'pattern' => 'amteich/helpsection/index',
         'action'  => function () {
-        $slug = option('mgfagency.helpsection.contentfolder', 'helpsection');
+        $slug = option('amteich.helpsection.contentfolder', 'helpsection');
         $pages = [];
         $page = page($slug);
 
@@ -50,7 +50,7 @@ return [
     ],
     [
         // Get the first set of pages to display primary nav
-        'pattern' => 'mgfagency/helpsection/page/(:all)',
+        'pattern' => 'amteich/helpsection/page/(:all)',
         'action'  => function ($slug) {
         return [
             'rendered' => page($slug)->render(),

@@ -17,7 +17,7 @@ return [
             ];
         }
 
-        foreach (page($slug)->children() as $page) {
+        foreach (page($slug)->children()->listed() as $page) {
             $pagedata = [
             'title' => (string)$page->title(),
             'id' => (string)$page->id(),

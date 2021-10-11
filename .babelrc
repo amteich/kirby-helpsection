@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    ["prismjs", {
+        "languages": ["markdown"],
+        "theme": "twilight",
+        "css": true
+    }]
+  ]
+}

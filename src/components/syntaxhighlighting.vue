@@ -1,7 +1,7 @@
 <script>
 
-import Prism from "../vendor/prism.js"
-import "../vendor/prism.css"
+import Prism from 'prismjs';
+import '../vendor/prism.css';
 
 export default {
   init() {
@@ -20,6 +20,9 @@ export default {
     }
   },
   initPrismLanguages() {
+
+    Prism.manual = true;
+
     Prism.languages.kirbytext = Prism.languages.extend('markdown', {});
 
     Prism.languages.insertBefore('kirbytext', 'prolog', {

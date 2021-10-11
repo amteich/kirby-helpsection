@@ -1,23 +1,16 @@
 {
   "name": "kirby-helpsection",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "bili --watch",
-    "build": "bili",
-    "lint": "eslint src/** --ext .js,.vue",
-    "cs": "php-cs-fixer fix ./ --rules=@PSR2"
+    "dev": "npx -y kirbyup src/index.js --watch",
+    "build": "npx -y kirbyup src/index.js"
   },
   "devDependencies": {
-    "bili": "^4.9.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.13.1",
-    "rollup-plugin-eslint": "^7.0.0",
-    "rollup-plugin-livereload": "^1.1.0",
-    "rollup-plugin-vue": "^5.1.6",
-    "vue-template-compiler": "^2.6.11"
+    "babel-plugin-prismjs": "^2.1.0",
+    "prismjs": "^1.25.0",
+    "vite-babel-plugin": "^0.0.2"
   },
   "eslintConfig": {
     "root": true,

@@ -1,3 +1,5 @@
+# ⚠️ Looking for new maintainer: Please let me know if you want to [take this repo on](https://github.com/seehat)
+
 # Kirby 3 Help Section
 
 ![Kirby Version](https://img.shields.io/badge/Kirby-3%2B-black.svg?style=for-the-badge) ![Kirby 3 Pluginkit](https://img.shields.io/badge/Pluginkit-YES-cca000.svg?style=for-the-badge)
